@@ -7,7 +7,7 @@ name: Build and deploy Python app to Azure Web App - computervisiondemo
 on:
   push:
     branches:
-      - main
+      - main*
   workflow_dispatch:
 
 jobs:
@@ -63,7 +63,6 @@ jobs:
 
       - name: Unzip artifact for deployment
         run: unzip release.zip
-
       
       - name: Login to Azure
         uses: azure/login@v2
